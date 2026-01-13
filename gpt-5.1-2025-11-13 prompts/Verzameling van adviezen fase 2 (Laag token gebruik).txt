@@ -1,0 +1,41 @@
+Properties:
+	Model
+		gpt-5.1-2025-11-13
+	Tokens
+		8.886 total
+	Tools
+		Web Search
+	Configuration
+		Response
+			text
+		Max output tokens
+			800
+		Reasoning effort
+			none
+		Verbosity
+			medium
+
+Input (8.661 tokens):
+	Lees dit document: https://www.rli.nl/publicaties/2020/advies/greep-op-gevaarlijke-stoffen
+
+	Vul de onderstaande JSON in volgens https://github.com/wooverheid/WoogleDocumentatie/tree/master/SPEC%20MetadataSchema:
+
+	{
+	    "dc_title": "",
+	    "foi_publishedDate": "",
+	    "dc_description": ""
+	}
+
+	Regels:
+	- Alleen écht gevonden info invullen.
+	- Max 100 woorden in dc_description.
+	- Ontbreekt iets? dan "" laten.
+	- datum in jjjj-mm-dd
+	- Output = alleen geldige JSON niks anders.
+
+Output:
+	{
+	  "dc_title": "Greep op gevaarlijke stoffen",
+	  "foi_publishedDate": "2020-03-11",
+	  "dc_description": "Het advies beschrijft dat het huidige beleid voor gevaarlijke stoffen onvoldoende is om risico’s voor mens en milieu te beheersen. Het aantal stoffen, toepassingen en hergebruik neemt toe, wat leidt tot stapeling in de leefomgeving en nieuwe risico’s, bijvoorbeeld PFAS, gewasbeschermingsmiddelen, microplastics en medicijnresten. De raad doet tien aanbevelingen om de verspreiding van stoffen beter te beheersen, cumulatieve blootstelling te beperken en toe te werken naar een veilige circulaire economie in 2050, onder meer door een track & trace-systeem, betere normstelling en nieuwe Europese regels."
+	}

@@ -1,0 +1,83 @@
+Properties:
+	Model
+		gpt-5.1-2025-11-13
+	Tokens
+		13.842 total
+	Tools
+		Web Search
+	Configuration
+		Response
+			text
+		Max output tokens
+			800
+		Reasoning effort
+			none
+		Verbosity
+			medium
+
+Input (13.459 tokens):
+	Je bent een nauwkeurige juridisch-redactionele assistent.
+
+	Je taak:
+
+	Lees deze URL (een advies van een adviescollege):
+	https://www.commissiemer.nl/adviezen/3536
+
+	Baseer je antwoord ALLEEN op de tekst in deze URL (en eventueel de gekoppelde PDF).
+	Gebruik GEEN voorkennis buiten de inhoud van het document.
+
+	Vul onderstaande JSON in met informatie vanuit het advies:
+
+	dc_title: de titel van het advies
+	foi_publishedDate: de datum waarop het advies officieel is uitgebracht (formaat jjjj-mm-dd)
+	dc_description: een korte beschrijving (maximaal 100 woorden) waar het advies over gaat
+	dc_source: de URL van het advies (gebruik: https://www.commissiemer.nl/adviezen/3536)
+	dc_publisher: ALTIJD "oorg10196"
+	dc_type: ALTIJD "2e"
+	foi_files.foi_documenten[0].dc_title: de titel van het bestand/advies (zoals op de PDF)
+	foi_files.foi_documenten[0].dc_source: de URL van de PDF-downloadbron
+	foi_files.foi_documenten[0].foi_url_on_web: ALTIJD true
+	Als je bepaalde velden NIET zeker weet, vul dan een lege string ("") in voor dat veld.
+
+	Retourneer ALLEEN geldige JSON, zonder commentaar, zonder extra tekst, zonder uitleg.
+
+	TEMPLATE (vul de lege strings aan waar mogelijk):
+
+	{
+	"dc_source": "https://www.commissiemer.nl/adviezen/3536",
+	"dc_title": "",
+	"foi_publishedDate": "",
+	"foi_decisionDate": "",
+	"dc_description": "",
+	"dc_publisher": "oorg10196",
+	"dc_type": "2e",
+	"foi_files": {
+	"foi_documenten": [
+	{
+	"dc_title": "",
+	"dc_source": "",
+	"foi_url_on_web": true
+	}
+	]
+	}
+	}
+
+Output:
+	{
+	  "dc_source": "https://www.commissiemer.nl/adviezen/3536",
+	  "dc_title": "3536. Verbinding Zeeburgereiland, gemeente Amsterdam",
+	  "foi_publishedDate": "2023-12-12",
+	  "foi_decisionDate": "",
+	  "dc_description": "De gemeente Amsterdam wil de ontsluiting van Zeeburgereiland en IJburg voor openbaar vervoer en fiets verbeteren met het project Verbinding Zeeburgereiland. Hiervoor is een plan-MER opgesteld waarin vier alternatieven met nieuwe bruggen over het Amsterdam-Rijnkanaal zijn onderzocht op bereikbaarheid en milieueffecten. De Commissie voor de milieueffectrapportage beoordeelt de juistheid en volledigheid van het MER en constateert dat aanvullende informatie nodig is over de samenhang met andere projecten en de cumulatieve milieueffecten, voordat een volwaardige besluitvorming kan plaatsvinden.",
+	  "dc_publisher": "oorg10196",
+	  "dc_type": "2e",
+	  "foi_files": {
+	    "foi_documenten": [
+	      {
+	        "dc_title": "Verbinding Zeeburgereiland, gemeente Amsterdam - Toetsingsadvies over het milieueffectrapport",
+	        "dc_source": "https://www.commissiemer.nl/docs/mer/p35/p3536/a3536ts.pdf",
+	        "foi_url_on_web": true
+	      }
+	    ]
+	  }
+	}
